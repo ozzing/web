@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+  </head>
+  <body>
+      <h1>Object</h1>
+      <script>
+        var coworkers = {
+              "professor" : "junwan",
+              "resident" : "jaehak"
+        };
+        coworkers.student = "hongdo";
+      </script>
+      <script>
+        coworkers.showAll = function(){
+          for(var key in this){
+           if(typeof(this[key])!="function")
+              document.write(key +' : ' + this[key]+'<br>');
+          }
+        }
+        coworkers.showAll();
+      </script>
+  </body>
+</html>
