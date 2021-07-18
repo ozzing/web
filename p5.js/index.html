@@ -5,23 +5,15 @@
   <body>
     <script>
           function setup(){
-            createCanvas(400, 400);
+            createCanvas(windowWidth, windowHeight);
+            x = 0;
+            y = 0;
+          }
+          function draw(){
             background('LemonChiffon');
-            circle(100, 100, 30);
-            circle(300, 100, 30);
-            c = color(65);
-            fill(c);
-            circle(100, 100, 20);
-            circle(300, 100, 20);
-            noFill();
-            arc(220, 200, 160, 90, QUARTER_PI, PI);
-            c = color('lightpink');
-            fill(c);
-            noStroke();
-            arc(168, 240, 60, 55, 0, PI + QUARTER_PI, CHORD);
-            c=color('darkmagenta');
-            stroke(c);
-            line(172, 235, 158, 260);
+            x += 10;
+            y += 5;
+            circle(x, y, 100);
           }
     </script>
   </body>
