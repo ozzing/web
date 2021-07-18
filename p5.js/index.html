@@ -6,14 +6,10 @@
     <script>
           function setup(){
             createCanvas(windowWidth, windowHeight);
-            x = 0;
-            y = 0;
           }
           function draw(){
             background('LemonChiffon');
-            x += 10;
-            y += 5;
-            circle(x, y, 100);
+            circle(mouseX+random(-10, 10), mouseY+random(-10, 10), random(50));
           }
     </script>
   </body>

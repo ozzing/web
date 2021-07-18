@@ -10,12 +10,15 @@
             x=0; y=0; a=0; b=0;
             }
             function draw(){
+              // 배경
               background('LemonChiffon');
+              // 흰자
               circle(100, 100, 30);
               circle(300, 100, 30);
+              // 입
               noFill();
               arc(220, 200, 160, 90, QUARTER_PI, PI);
-
+              // 혀
               c = color('lightpink');
               fill(c);
               noStroke();
@@ -24,19 +27,30 @@
               stroke(c);
               line(172, 235, 158, 260);
               stroke(65);
-
+              // 검은자
               c = color(65);
               fill(c);
-              x = 97+random(5);
-              y = 97+random(5);
-              a = 297+random(5);
-              b = 97+random(5);
+              x = 100+((mouseX-200)/10)+random(-5, 5);
+              y = 100+((mouseY-100)/10)+random(-5, 5);
+              a = 300+((mouseX-200)/10)+random(-5, 5);
+              b = 100+((mouseY-100)/10)+random(-5, 5);
               circle(x, y, 20);
               circle(a, b, 20);
-
-              c=color('white');
+              fill(255);
+              // 마우스
+              px=pow(mouseX-pmouseY,2);
+              py=pow(mouseY-pmouseY,2);
+              speed = sqrt(px,py);
+              c=color(random(255),random(255),random(255));
               fill(c);
+              circle(mouseX, mouseY, speed/10);
+              fill(255);
+              // line(pmouseX, pmouseY, mouseX, mouseY);
 
+            }
+            function mousePressed(){
+              c=color(random(255),random(255),random(255));
+              fill(c);
             }
     </script>
 
