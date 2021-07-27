@@ -1,6 +1,8 @@
 var express = require('express')
 var router = express.Router()
 var template = require('../lib/template.js')
+var auth = require('../lib/auth.js')
+
 
 router.get('/', function(request,response){
     var title = 'Welcome!';
@@ -8,7 +10,7 @@ router.get('/', function(request,response){
     var list = template.list(request.list);
     var html = template.html(title, list, `<h2>${title}</h2>${description}
       <img src="/images/coding.jpg" style="width:400px; display:block; margin-top:20px;">`,
-      `<a href="/topic/create">CREATE</a>`);
+      `<a href="/topic/create">CREATE</a>`, auth.statusUI(request, response));
       response.send(html);
 });
 
